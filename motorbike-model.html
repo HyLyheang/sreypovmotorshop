@@ -1055,14 +1055,38 @@
       const modelSearchEmpty = document.querySelector("#modelSearchEmpty");
       const cartCountBadge = document.querySelector("#cartCountBadge");
 
+      const normalizeSearchText = (value) => value
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      const matchesSearchQuery = (item, rawQuery) => {
+        const normalizedQuery = normalizeSearchText(rawQuery);
+        if (!normalizedQuery) {
+          return true;
+        }
+
+        const searchableText = [
+          item.dataset.modelName || "",
+          item.querySelector(".model-name")?.textContent || "",
+          item.textContent || "",
+        ].join(" ");
+
+        const normalizedText = normalizeSearchText(searchableText);
+        const compactText = normalizedText.replace(/\s+/g, "");
+        const queryTokens = normalizedQuery.split(" ").filter(Boolean);
+
+        return queryTokens.every((token) => normalizedText.includes(token) || compactText.includes(token));
+      };
+
       if (modelSearchInput && modelItems.length && modelSearchStatus && modelSearchEmpty) {
         const updateModelSearch = () => {
-          const query = modelSearchInput.value.trim().toLowerCase();
+          const query = modelSearchInput.value.trim();
           let visibleCount = 0;
 
           modelItems.forEach((item) => {
-            const modelName = (item.dataset.modelName || "").toLowerCase();
-            const isMatch = !query || modelName.includes(query);
+            const isMatch = matchesSearchQuery(item, query);
             item.style.display = isMatch ? "" : "none";
             if (isMatch) {
               visibleCount += 1;
