@@ -1,0 +1,1223 @@
+<!doctype html>
+<html class="h-100" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description" content="Explore Honda motorbike models at Sreypov Motorshop">
+    <meta name="author" content="Sreypov Motorshop">
+
+    <title>Motorbike Models | Sreypov Motorshop</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logosp.png">
+    <link rel="shortcut icon" href="img/logosp.png">
+    <link rel="icon" type="image/png" sizes="any" href="img/logosp.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logosp.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/logosp.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/logosp.png">
+    <link rel="stylesheet" href="css/theme.min.css">
+
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src:
+          local(""),
+          url("fonts/inter-v12-latin-300.woff2") format("woff2"),
+          url("fonts/inter-v12-latin-300.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src:
+          local(""),
+          url("fonts/inter-v12-latin-regular.woff2") format("woff2"),
+          url("fonts/inter-v12-latin-regular.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src:
+          local(""),
+          url("fonts/inter-v12-latin-500.woff2") format("woff2"),
+          url("fonts/inter-v12-latin-500.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src:
+          local(""),
+          url("fonts/inter-v12-latin-700.woff2") format("woff2"),
+          url("fonts/inter-v12-latin-700.woff") format("woff");
+      }
+
+      :root {
+        --brand-red: #e10600;
+        --brand-red-deep: #8f0000;
+        --brand-ink: #121212;
+        --brand-silver: #f4f5f7;
+        --brand-border: rgba(18, 18, 18, 0.08);
+        --font-primary: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+
+      html {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body,
+      button,
+      input,
+      select,
+      textarea {
+        font-family: var(--font-primary);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-primary);
+        letter-spacing: -0.01em;
+      }
+
+      .navbar,
+      .navbar.scrolled {
+        background-color: #000 !important;
+        position: sticky;
+        top: 0;
+        z-index: 1100;
+        transition: padding 0.25s ease, background-color 0.25s ease;
+      }
+
+      .navbar {
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+      }
+
+      .navbar.scrolled {
+        padding-top: 0.34rem;
+        padding-bottom: 0.34rem;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 1.5rem;
+      }
+
+      .site-brand {
+        display: inline-flex;
+        align-items: center;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .site-brand-title {
+        font-size: clamp(1.45rem, 2.2vw, 2rem);
+        line-height: 1.15;
+        transition: font-size 0.25s ease;
+      }
+
+      .site-brand-logo {
+        height: 92px;
+        max-width: 100%;
+        transition: height 0.25s ease;
+      }
+
+      .site-links {
+        display: flex;
+        align-items: center;
+        gap: 2.25rem;
+        transition: gap 0.25s ease;
+      }
+
+      .site-link {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: 0.01em;
+        opacity: 0.92;
+        transition: opacity 0.2s ease, color 0.2s ease, font-size 0.25s ease;
+      }
+
+      .cart-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .cart-count-badge {
+        min-width: 1.45rem;
+        height: 1.45rem;
+        padding: 0 0.38rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ff3d33, #b80000);
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.72rem;
+        font-weight: 700;
+        line-height: 1;
+        box-shadow: 0 6px 12px rgba(225, 6, 0, 0.3);
+        transform: scale(1);
+      }
+
+      .cart-count-badge.bump {
+        animation: cartBadgeBump 0.28s ease;
+      }
+
+      @keyframes cartBadgeBump {
+        0% {
+          transform: scale(1);
+        }
+        45% {
+          transform: scale(1.26);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .navbar.scrolled .site-brand-logo {
+        height: 58px;
+      }
+
+      .navbar.scrolled .site-brand-title {
+        font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+      }
+
+      .navbar.scrolled .site-links {
+        gap: 1.35rem;
+      }
+
+      .navbar.scrolled .site-link {
+        font-size: 0.92rem;
+      }
+
+      .site-link:hover,
+      .site-link:focus {
+        color: #fff;
+        opacity: 1;
+      }
+
+      @media (max-width: 768px) {
+        .navbar,
+        .navbar.scrolled {
+          padding-top: 0.45rem;
+          padding-bottom: 0.45rem;
+        }
+
+        .site-nav {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.8rem;
+        }
+
+        .site-links {
+          gap: 1.25rem;
+          padding-left: 0.25rem;
+          flex-wrap: wrap;
+        }
+      }
+
+      body {
+        background:
+          radial-gradient(circle at top left, rgba(225, 6, 0, 0.08), transparent 28%),
+          linear-gradient(180deg, #ffffff 0%, #f7f7f8 100%);
+      }
+
+      .models-hero {
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.22), transparent 24%),
+          radial-gradient(circle at 88% 82%, rgba(225, 6, 0, 0.38), transparent 28%),
+          linear-gradient(135deg, #0e0e10 0%, #252629 40%, #7f0000 100%);
+      }
+
+      .models-hero::before,
+      .models-hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      .models-hero::before {
+        width: 24rem;
+        height: 24rem;
+        top: -8rem;
+        right: -7rem;
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .models-hero::after {
+        width: 18rem;
+        height: 18rem;
+        bottom: -7rem;
+        left: -5rem;
+        background: rgba(225, 6, 0, 0.22);
+      }
+
+      .hero-shell {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.45rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero-title {
+        margin-top: 1rem;
+        font-size: clamp(2.4rem, 5vw, 4.4rem);
+        font-weight: 800;
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+      }
+
+      .hero-subtitle {
+        max-width: 40rem;
+        margin-top: 1rem;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: clamp(1rem, 1.6vw, 1.2rem);
+      }
+
+      .hero-panel {
+        padding: 2rem;
+        border-radius: 1.75rem;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.22);
+        backdrop-filter: blur(12px);
+      }
+
+      .hero-panel-layout {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+      }
+
+      .hero-panel-copy {
+        flex: 1 1 0;
+      }
+
+      .hero-panel-image-wrap {
+        flex: 0 0 10rem;
+      }
+
+      .hero-panel-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 1.2rem;
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 18px 30px rgba(0, 0, 0, 0.16);
+      }
+
+      .hero-panel-label {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero-panel h2 {
+        margin-top: 0.75rem;
+        font-size: clamp(1.7rem, 2.4vw, 2.4rem);
+        line-height: 1.08;
+      }
+
+      .hero-panel p {
+        margin-top: 0.8rem;
+        margin-bottom: 1.2rem;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .hero-feature-list {
+        display: grid;
+        gap: 0.7rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .hero-feature-list li {
+        padding: 0.9rem 1rem;
+        border-radius: 1rem;
+        background: rgba(0, 0, 0, 0.18);
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .catalog-section {
+        margin-top: -2.75rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .catalog-shell {
+        padding: clamp(1.5rem, 3vw, 2.6rem);
+        border-radius: 2rem;
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(255, 255, 255, 0.78);
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+      }
+
+      .section-kicker {
+        color: var(--brand-red);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .section-title {
+        color: var(--brand-ink);
+        font-size: clamp(2rem, 3vw, 3rem);
+        line-height: 1.05;
+      }
+
+      .section-copy {
+        max-width: 42rem;
+        color: #5b616b;
+      }
+
+      .catalog-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .catalog-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.65rem 1rem;
+        border-radius: 999px;
+        background: #f5f5f6;
+        border: 1px solid var(--brand-border);
+        color: #3f444d;
+        font-size: 0.92rem;
+        font-weight: 600;
+      }
+
+      .catalog-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .catalog-search {
+        position: relative;
+        flex: 1 1 24rem;
+        max-width: 32rem;
+      }
+
+      .catalog-search-input {
+        width: 100%;
+        padding: 1rem 1.15rem 1rem 3rem;
+        border: 1px solid rgba(18, 18, 18, 0.12);
+        border-radius: 999px;
+        background: #fff;
+        color: var(--brand-ink);
+        font-size: 1rem;
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.05);
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .catalog-search-input:focus {
+        outline: none;
+        border-color: rgba(225, 6, 0, 0.35);
+        box-shadow: 0 18px 36px rgba(225, 6, 0, 0.12);
+      }
+
+      .catalog-search-icon {
+        position: absolute;
+        left: 1.1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.95rem;
+        height: 0.95rem;
+        pointer-events: none;
+      }
+
+      .catalog-search-icon::before,
+      .catalog-search-icon::after {
+        content: "";
+        position: absolute;
+        display: block;
+      }
+
+      .catalog-search-icon::before {
+        width: 0.7rem;
+        height: 0.7rem;
+        border: 2px solid #7b828d;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+      }
+
+      .catalog-search-icon::after {
+        width: 0.42rem;
+        height: 2px;
+        background: #7b828d;
+        border-radius: 999px;
+        right: 0.02rem;
+        bottom: 0.05rem;
+        transform: rotate(45deg);
+        transform-origin: center;
+      }
+
+      .catalog-search-status {
+        color: #666d78;
+        font-size: 0.95rem;
+      }
+
+      .catalog-empty {
+        display: none;
+        padding: 2rem;
+        border: 1px dashed rgba(18, 18, 18, 0.12);
+        border-radius: 1.5rem;
+        background: #fbfbfc;
+        color: #5d6470;
+        text-align: center;
+      }
+
+      .model-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--brand-border);
+        border-radius: 1.6rem;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      }
+
+      .model-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 46px rgba(15, 23, 42, 0.12);
+        border-color: rgba(225, 6, 0, 0.24);
+      }
+
+      .model-media {
+        height: 13rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 0.9rem;
+        background: linear-gradient(145deg, #f6f6f7, #ececef);
+      }
+
+      .model-media img {
+        width: auto;
+        height: auto;
+        max-width: 88%;
+        max-height: 88%;
+      }
+
+      .model-item[data-model-name="Honda PCX"] .model-media img {
+        max-width: 100%;
+        max-height: 100%;
+        transform: scale(1.18);
+        transform-origin: center;
+      }
+
+      .model-media-placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: #8e949d;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        background:
+          linear-gradient(135deg, rgba(225, 6, 0, 0.08), rgba(17, 17, 17, 0.06)),
+          repeating-linear-gradient(135deg, transparent, transparent 18px, rgba(255, 255, 255, 0.55) 18px, rgba(255, 255, 255, 0.55) 36px);
+      }
+
+      .model-body {
+        padding: 1.55rem;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .model-meta {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .model-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.38rem 0.78rem;
+        border-radius: 999px;
+        background: rgba(225, 6, 0, 0.08);
+        color: var(--brand-red);
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .model-name {
+        margin-bottom: 0.65rem;
+        color: var(--brand-ink);
+        font-size: 1.45rem;
+        font-weight: 700;
+        line-height: 1.15;
+        min-height: 3.35rem;
+      }
+
+      .model-description {
+        color: #5d6470;
+        margin-bottom: 1rem;
+        min-height: 3.1rem;
+      }
+
+      .model-specs {
+        display: grid;
+        gap: 0.65rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        flex: 1 1 auto;
+      }
+
+      .model-specs li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.7rem;
+        color: #3c434d;
+      }
+
+      .model-specs li::before {
+        content: "";
+        width: 0.55rem;
+        height: 0.55rem;
+        margin-top: 0.45rem;
+        flex: 0 0 auto;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ff4d47, var(--brand-red));
+        box-shadow: 0 0 0 5px rgba(225, 6, 0, 0.08);
+      }
+
+      .model-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+        margin-top: auto;
+        padding-top: 1rem;
+      }
+
+      .model-btn {
+        border: 1px solid rgba(18, 18, 18, 0.12);
+        border-radius: 999px;
+        padding: 0.62rem 0.8rem;
+        font-size: 0.84rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      }
+
+      .model-btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .model-btn-buy {
+        background: linear-gradient(135deg, #ec1b11, #b80000);
+        color: #fff;
+        border-color: #b80000;
+        box-shadow: 0 8px 16px rgba(225, 6, 0, 0.2);
+      }
+
+      .model-btn-cart {
+        background: #fff;
+        color: var(--brand-red);
+        border-color: rgba(225, 6, 0, 0.32);
+      }
+
+      .model-btn:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
+
+      .cta-panel {
+        padding: clamp(1.5rem, 3vw, 2.4rem);
+        border-radius: 1.7rem;
+        background: linear-gradient(135deg, #151618 0%, #23252a 58%, #7f0000 100%);
+        color: #fff;
+        box-shadow: 0 22px 48px rgba(0, 0, 0, 0.16);
+      }
+
+      .cta-panel p {
+        color: rgba(255, 255, 255, 0.76);
+      }
+
+      .btn-brand {
+        background: #fff;
+        color: #111;
+        border: none;
+        font-weight: 700;
+      }
+
+      .btn-brand:hover,
+      .btn-brand:focus {
+        background: #f2f2f2;
+        color: #111;
+      }
+
+      @media (max-width: 1200px) {
+        .site-brand-logo {
+          height: 78px;
+        }
+
+        .site-brand-title {
+          font-size: 1.55rem;
+        }
+
+        .site-links {
+          gap: 1.4rem;
+        }
+
+        .navbar.scrolled .site-brand-logo {
+          height: 52px;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .catalog-section {
+          margin-top: -1.4rem;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .hero-panel {
+          margin-top: 1.5rem;
+        }
+
+        .hero-panel-layout {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .hero-panel-image-wrap {
+          width: 100%;
+          max-width: 15rem;
+          flex-basis: auto;
+        }
+
+        .model-body {
+          padding: 1.25rem;
+        }
+
+        .model-media {
+          height: 11.5rem;
+        }
+
+        .model-meta {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .catalog-toolbar {
+          align-items: stretch;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-dark mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
+    <nav id="navScroll" class="navbar navbar-dark bg-black px-vw-5" tabindex="0">
+      <div class="container">
+        <div class="site-nav">
+          <a class="site-brand" href="index.html">
+            <img src="img/logosp.png" alt="Sreypov Motorshop Logo" class="site-brand-logo me-3">
+            <span class="site-brand-title mb-0 text-white fw-normal">Sreypov Motorshop</span>
+          </a>
+          <div class="site-links">
+            <a href="index.html#about" class="site-link">About Us</a>
+            <a href="motorbike-model.html" class="site-link">Product</a>
+            <a href="index.html#contact" class="site-link">Contact Us</a>
+            <a href="cart.html" class="site-link cart-link">Cart <span id="cartCountBadge" class="cart-count-badge">0</span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="models-hero text-white py-vh-4">
+        <div class="container px-vw-5 hero-shell">
+          <div class="row align-items-center gy-5">
+            <div class="col-12 col-lg-7">
+              <span class="hero-eyebrow">Sreypov Motorshop Collection</span>
+              <h1 class="hero-title">Explore our products.</h1>
+            </div>
+            <div class="col-12 col-lg-5">
+              <div class="hero-panel" data-aos="fade-left">
+                <div class="hero-panel-layout">
+                  <div class="hero-panel-copy">
+                    <div class="hero-panel-label">Recommend Model</div>
+                    <h2>Honda Dream 2026</h2>
+                    <p>Reliable, efficient and affordable.</p>
+                  </div>
+                  <div class="hero-panel-image-wrap">
+                    <img src="img/webp/dream26red.png" alt="Honda Dream 2026" class="hero-panel-image" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-section py-vh-3" id="models">
+        <div class="container px-vw-5">
+          <div class="catalog-shell">
+            <div class="row align-items-end gy-4 mb-5">
+              <div class="col-12 col-lg-7">
+                <div class="section-kicker">Available Motorbike Models</div>
+                <h2 class="section-title fw-bold mt-2 mb-3">A stronger product grid for current stock and upcoming arrivals.</h2>
+                <p class="section-copy mb-0">This updated section gives each model more presence with cleaner spacing and stronger hierarchy for your current lineup.</p>
+              </div>
+              <div class="col-12 col-lg-5">
+                <div class="catalog-badges justify-content-lg-end">
+                  <span class="catalog-badge">Commuter bikes</span>
+                  <span class="catalog-badge">Automatic scooters</span>
+                  <span class="catalog-badge">7-model inventory layout</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog-toolbar">
+              <label class="catalog-search" for="modelSearch">
+                <span class="catalog-search-icon" aria-hidden="true"></span>
+                <input id="modelSearch" class="catalog-search-input" type="search" placeholder="Search model name, for example Dream or Click" aria-label="Search motorbike models by name">
+              </label>
+              <div id="modelSearchStatus" class="catalog-search-status">Showing all 7 models</div>
+            </div>
+
+            <div id="modelGrid" class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+              <div class="col model-item" data-model-name="Honda Dream 2026" data-aos="zoom-in-up">
+                <article class="model-card">
+                  <div class="model-media">
+                    <img src="img/webp/dream26red.png" width="582" height="327" alt="Honda Dream 2026 in red" loading="lazy">
+                  </div>
+                  <div class="model-body">
+                    <div class="model-meta">
+                      <span class="model-tag">Best Seller</span>
+                    </div>
+                    <h3 class="model-name">Honda Dream 2026</h3>
+                    <p class="model-description">Reliable daily bike with low fuel cost.</p>
+                    <ul class="model-specs">
+                      <li>Price: $2500</li>
+                      <li>125cc engine</li>
+                      <li>4-speed transmission</li>
+                      <li>Up to 70 km/L fuel efficiency</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col model-item" data-model-name="Honda Wave 2025" data-aos="zoom-in-up" data-aos-delay="50">
+                <article class="model-card">
+                  <div class="model-media">
+                    <img src="img/webp/waveblack.png" width="582" height="442" alt="Honda Wave 2025 in black" loading="lazy">
+                  </div>
+                  <div class="model-body">
+                    <div class="model-meta">
+                      <span class="model-tag">Efficient</span>
+                    </div>
+                    <h3 class="model-name">Honda Wave 2025</h3>
+                    <p class="model-description">Affordable and practical for city commuting.</p>
+                    <ul class="model-specs">
+                      <li>Price: $2200</li>
+                      <li>110cc engine</li>
+                      <li>4-speed transmission</li>
+                      <li>Up to 70 km/L fuel efficiency</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col model-item" data-model-name="Honda Scoopy 2026" data-aos="zoom-in-up" data-aos-delay="100">
+                <article class="model-card">
+                  <div class="model-media">
+                    <img src="img/webp/scoopy26pink.png" width="582" height="390" alt="Honda Scoopy 2026 in pink" loading="lazy">
+                  </div>
+                  <div class="model-body">
+                    <div class="model-meta">
+                      <span class="model-tag">Lifestyle</span>
+                    </div>
+                    <h3 class="model-name">Honda Scoopy 2026</h3>
+                    <p class="model-description">Retro look with easy automatic comfort.</p>
+                    <ul class="model-specs">
+                      <li>Price: $2300</li>
+                      <li>110cc engine</li>
+                      <li>Automatic transmission</li>
+                      <li>SmartKey system</li>
+                      <li>Up to 60 km/L fuel efficiency</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col model-item" data-model-name="Honda Click 2027" data-aos="zoom-in-up" data-aos-delay="150">
+                <article class="model-card">
+                  <div class="model-media">
+                    <img src="img/webp/click27model.png" width="582" height="327" alt="Honda Click 2027 product image" loading="lazy">
+                  </div>
+                  <div class="model-body">
+                    <div class="model-meta">
+                      <span class="model-tag">Sporty</span>
+                    </div>
+                    <h3 class="model-name">Honda Click 2027</h3>
+                    <p class="model-description">Sporty scooter with strong city performance.</p>
+                    <ul class="model-specs">
+                      <li>Price: $2600</li>
+                      <li>125cc engine</li>
+                      <li>Automatic transmission</li>
+                      <li>SmartKey system</li>
+                      <li>Up to 52 km/L efficiency</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col model-item" data-model-name="Honda Giorno 2026" data-aos="zoom-in-up">
+                <article class="model-card">
+                  <div class="model-media">
+                    <img src="img/webp/Giorno.png" width="582" height="327" alt="Honda Giorno 2026 product image" loading="lazy">
+                  </div>
+                  <div class="model-body">
+                    <div class="model-meta">
+                      <span class="model-tag">New</span>
+                    </div>
+                    <h3 class="model-name">Honda Giorno 2026</h3>
+                    <p class="model-description">Stylish scooter for smooth everyday riding.</p>
+                    <ul class="model-specs">
+                      <li>Price: $3300</li>
+                      <li>125cc engine</li>
+                      <li>Automatic transmission</li>
+                      <li>SmartKey system</li>
+                      <li>Up to 48 km/L efficiency</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col model-item" data-model-name="Honda ADV 2026" data-aos="zoom-in-up" data-aos-delay="50">
+                <article class="model-card">
+                  <div class="model-media">
+                    <img src="img/webp/ADV.png" width="582" height="327" alt="Honda ADV 2026 product image" loading="lazy">
+                  </div>
+                  <div class="model-body">
+                    <div class="model-meta">
+                      <span class="model-tag">Adventure</span>
+                    </div>
+                    <h3 class="model-name">Honda ADV 2026</h3>
+                    <p class="model-description">Premium adventure scooter for mixed routes.</p>
+                    <ul class="model-specs">
+                      <li>Price: $4500</li>
+                      <li>160cc engine</li>
+                      <li>Automatic transmission</li>
+                      <li>SmartKey system</li>
+                      <li>Up to 38 km/L efficiency</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col model-item" data-model-name="Honda PCX" data-aos="zoom-in-up" data-aos-delay="100">
+                <article class="model-card">
+                  <div class="model-media">
+                    <img src="img/webp/pcx.png" width="582" height="327" alt="Honda PCX product image" loading="lazy">
+                  </div>
+                  <div class="model-body">
+                    <div class="model-meta">
+                      <span class="model-tag">Premium</span>
+                    </div>
+                    <h3 class="model-name">Honda PCX</h3>
+                    <p class="model-description">Premium automatic scooter with sleek comfort.</p>
+                    <ul class="model-specs">
+                      <li>Price: $3500</li>
+                      <li>125cc engine</li>
+                      <li>Automatic transmission</li>
+                      <li>SmartKey system</li>
+                      <li>Up to 52 km/L efficiency</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div id="modelSearchEmpty" class="catalog-empty mt-4">
+              No model name matches your search. Try Dream, ADV, Giorno, or PCX.
+            </div>
+
+            <div class="cta-panel mt-5" data-aos="fade-up">
+              <div class="row align-items-center gy-4">
+                <div class="col-12 col-lg-8">
+                  <div class="section-kicker text-white-50">Need help choosing?</div>
+                  <h3 class="mt-2 mb-2">Talk to Sreypov Motorshop for pricing, availability, and the right model for your customer needs.</h3>
+                  <p class="mb-0">Use this call-to-action as the next step after customers compare models in the catalog.</p>
+                </div>
+                <div class="col-12 col-lg-4 text-lg-end">
+                  <a href="index.html#contact" class="btn btn-brand rounded-pill px-4 py-3">Contact Us to Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-black text-white">
+      <div class="container py-5">
+        <div class="row gy-4 align-items-center">
+          <div class="col-12 col-md-6">
+            <a href="index.html" class="d-flex align-items-center text-white text-decoration-none mb-2">
+              <img src="img/logosp.png" alt="Sreypov Motorshop" style="height: 48px; width: auto;" class="me-2">
+              <span class="fw-bold fs-5">Sreypov Motorshop</span>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 text-md-end small text-secondary">
+            &copy; 2026 Sreypov Motorshop. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800 });
+    </script>
+    <script>
+      const header = document.querySelector(".navbar");
+      if (header) {
+        const headerHeight = header.offsetHeight;
+        const addClassOnScroll = () => header.classList.add("scrolled", "shadow-sm");
+        const removeClassOnScroll = () => header.classList.remove("scrolled", "shadow-sm");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY >= headerHeight) {
+            addClassOnScroll();
+          } else {
+            removeClassOnScroll();
+          }
+        });
+      }
+
+      const modelSearchInput = document.querySelector("#modelSearch");
+      const modelItems = Array.from(document.querySelectorAll(".model-item"));
+      const modelSearchStatus = document.querySelector("#modelSearchStatus");
+      const modelSearchEmpty = document.querySelector("#modelSearchEmpty");
+      const cartCountBadge = document.querySelector("#cartCountBadge");
+
+      if (modelSearchInput && modelItems.length && modelSearchStatus && modelSearchEmpty) {
+        const updateModelSearch = () => {
+          const query = modelSearchInput.value.trim().toLowerCase();
+          let visibleCount = 0;
+
+          modelItems.forEach((item) => {
+            const modelName = (item.dataset.modelName || "").toLowerCase();
+            const isMatch = !query || modelName.includes(query);
+            item.style.display = isMatch ? "" : "none";
+            if (isMatch) {
+              visibleCount += 1;
+            }
+          });
+
+          modelSearchEmpty.style.display = visibleCount === 0 ? "block" : "none";
+
+          if (!query) {
+            modelSearchStatus.textContent = `Showing all ${modelItems.length} models`;
+            return;
+          }
+
+          modelSearchStatus.textContent = `Showing ${visibleCount} result${visibleCount === 1 ? "" : "s"} for "${modelSearchInput.value.trim()}"`;
+        };
+
+        modelSearchInput.addEventListener("input", updateModelSearch);
+      }
+
+      const modelPriceMap = {
+        "Honda Dream 2026": 2500,
+        "Honda Wave 2025": 2200,
+        "Honda Scoopy 2026": 2300,
+        "Honda Click 2027": 2600,
+        "Honda Giorno 2026": 3300,
+        "Honda ADV 2026": 4500,
+        "Honda PCX": 3500,
+      };
+
+      const getStoredCart = () => {
+        try {
+          const raw = localStorage.getItem("cartItems");
+          const parsed = raw ? JSON.parse(raw) : [];
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      };
+
+      const setStoredCart = (items) => {
+        localStorage.setItem("cartItems", JSON.stringify(items));
+      };
+
+      const setStatusMessage = (message) => {
+        if (!modelSearchStatus) {
+          return;
+        }
+        modelSearchStatus.textContent = message;
+      };
+
+      const getCartCount = () => getStoredCart().reduce((sum, entry) => sum + (Number(entry.quantity) || 0), 0);
+
+      const updateCartBadge = (animate = false) => {
+        if (!cartCountBadge) {
+          return;
+        }
+
+        const count = getCartCount();
+        cartCountBadge.textContent = String(count);
+
+        if (animate) {
+          cartCountBadge.classList.remove("bump");
+          void cartCountBadge.offsetWidth;
+          cartCountBadge.classList.add("bump");
+        }
+      };
+
+      const buyNow = (itemData) => {
+        const cart = getStoredCart();
+        const existing = cart.find((entry) => entry.model === itemData.model);
+
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({
+            model: itemData.model,
+            price: itemData.price,
+            image: itemData.image,
+            quantity: 1,
+            addedAt: new Date().toISOString(),
+          });
+        }
+
+        setStoredCart(cart);
+        window.location.href = `cart.html?checkout=single&model=${encodeURIComponent(itemData.model)}`;
+      };
+
+      const addToCart = (itemData) => {
+        const cart = getStoredCart();
+        const existing = cart.find((entry) => entry.model === itemData.model);
+
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({
+            model: itemData.model,
+            price: itemData.price,
+            image: itemData.image,
+            quantity: 1,
+            addedAt: new Date().toISOString(),
+          });
+        }
+
+        setStoredCart(cart);
+        const totalItems = cart.reduce((sum, entry) => sum + (entry.quantity || 0), 0);
+        updateCartBadge(true);
+        setStatusMessage(`Added ${itemData.model} to cart (${totalItems} item${totalItems === 1 ? "" : "s"}).`);
+      };
+
+      modelItems.forEach((item) => {
+        const cardBody = item.querySelector(".model-body");
+        const cardNameEl = item.querySelector(".model-name");
+        const cardImageEl = item.querySelector(".model-media img");
+
+        if (!cardBody || !cardNameEl) {
+          return;
+        }
+
+        const modelName = cardNameEl.textContent.trim();
+        const isPurchasable = Object.prototype.hasOwnProperty.call(modelPriceMap, modelName);
+        const itemData = {
+          model: modelName,
+          price: modelPriceMap[modelName] || null,
+          image: cardImageEl ? cardImageEl.getAttribute("src") : "",
+        };
+
+        const actionWrap = document.createElement("div");
+        actionWrap.className = "model-actions";
+
+        const buyBtn = document.createElement("button");
+        buyBtn.type = "button";
+        buyBtn.className = "model-btn model-btn-buy";
+        buyBtn.textContent = "Buy Now";
+
+        const cartBtn = document.createElement("button");
+        cartBtn.type = "button";
+        cartBtn.className = "model-btn model-btn-cart";
+        cartBtn.textContent = "Add to Cart";
+
+        if (!isPurchasable) {
+          buyBtn.disabled = true;
+          cartBtn.disabled = true;
+          buyBtn.title = "Model details not ready yet";
+          cartBtn.title = "Model details not ready yet";
+        } else {
+          buyBtn.addEventListener("click", () => buyNow(itemData));
+          cartBtn.addEventListener("click", () => addToCart(itemData));
+        }
+
+        actionWrap.appendChild(buyBtn);
+        actionWrap.appendChild(cartBtn);
+        cardBody.appendChild(actionWrap);
+      });
+
+      updateCartBadge(false);
+    </script>
+  </body>
+</html>

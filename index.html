@@ -1,0 +1,1028 @@
+<!doctype html>
+<html class="h-100" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
+    <meta name="author" content="Holger Koenemann">
+    <meta name="generator" content="Eleventy v2.0.0">
+    <meta name="HandheldFriendly" content="true">
+
+    <title>Sreypov Motorshop</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logosp.png">
+    <link rel="shortcut icon" href="img/logosp.png">
+    <link rel="icon" type="image/png" sizes="any" href="img/logosp.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logosp.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/logosp.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/logosp.png">
+    <link rel="stylesheet" href="css/theme.min.css">
+
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src:
+          local(""),
+          url("fonts/inter-v12-latin-300.woff2") format("woff2"),
+          url("fonts/inter-v12-latin-300.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src:
+          local(""),
+          url("fonts/inter-v12-latin-regular.woff2") format("woff2"),
+          url("fonts/inter-v12-latin-regular.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src:
+          local(""),
+          url("fonts/inter-v12-latin-500.woff2") format("woff2"),
+          url("fonts/inter-v12-latin-500.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src:
+          local(""),
+          url("fonts/inter-v12-latin-700.woff2") format("woff2"),
+          url("fonts/inter-v12-latin-700.woff") format("woff");
+      }
+
+      :root {
+        --brand-red: #e10600;
+        --font-primary: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+
+      html {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body,
+      button,
+      input,
+      select,
+      textarea {
+        font-family: var(--font-primary);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-primary);
+        letter-spacing: -0.01em;
+      }
+
+      .navbar,
+      .navbar.scrolled {
+        background-color: #000 !important;
+        position: sticky;
+        top: 0;
+        z-index: 1100;
+        transition: padding 0.25s ease, background-color 0.25s ease;
+      }
+
+      .navbar {
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+      }
+
+      .navbar.scrolled {
+        padding-top: 0.34rem;
+        padding-bottom: 0.34rem;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 1.5rem;
+      }
+
+      .site-brand {
+        display: inline-flex;
+        align-items: center;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .site-brand-title {
+        font-size: clamp(1.45rem, 2.2vw, 2rem);
+        line-height: 1.15;
+        transition: font-size 0.25s ease;
+      }
+
+      .site-brand-logo {
+        height: 92px;
+        max-width: 100%;
+        transition: height 0.25s ease;
+      }
+
+      .site-links {
+        display: flex;
+        align-items: center;
+        gap: 2.25rem;
+        transition: gap 0.25s ease;
+      }
+
+      .site-link {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: 0.01em;
+        opacity: 0.92;
+        transition: opacity 0.2s ease, color 0.2s ease, font-size 0.25s ease;
+      }
+
+      .navbar.scrolled .site-brand-logo {
+        height: 58px;
+      }
+
+      .navbar.scrolled .site-brand-title {
+        font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+      }
+
+      .navbar.scrolled .site-links {
+        gap: 1.35rem;
+      }
+
+      .navbar.scrolled .site-link {
+        font-size: 0.92rem;
+      }
+
+      .site-link:hover,
+      .site-link:focus {
+        color: #fff;
+        opacity: 1;
+      }
+
+      @media (max-width: 768px) {
+        .navbar,
+        .navbar.scrolled {
+          padding-top: 0.45rem;
+          padding-bottom: 0.45rem;
+        }
+
+        .site-nav {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.8rem;
+        }
+
+        .site-links {
+          gap: 1.25rem;
+          padding-left: 0.25rem;
+          flex-wrap: wrap;
+        }
+      }
+
+      .hero-section {
+        background:
+          radial-gradient(circle at 15% 8%, rgba(255, 255, 255, 0.2), transparent 30%),
+          radial-gradient(circle at 88% 90%, rgba(120, 0, 0, 0.35), transparent 40%),
+          linear-gradient(165deg, #df0000 0%, #c20000 58%, #990000 100%);
+        color: #fff;
+      }
+
+      .hero-overlay {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.22));
+        opacity: 0.7;
+      }
+
+      .hero-content {
+        max-width: 58rem;
+      }
+
+      .hero-kicker {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.35rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.16);
+        border: 1px solid rgba(255, 255, 255, 0.26);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .hero-title {
+        margin-top: 0.7rem;
+        font-size: clamp(1.7rem, 3.9vw, 3rem);
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      }
+
+      .hero-poster-wrap {
+        margin: 0.95rem auto 0;
+        max-width: 44rem;
+        border-radius: 1.4rem;
+        padding: 0.38rem;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.2));
+        box-shadow: 0 20px 42px rgba(0, 0, 0, 0.26);
+      }
+
+      .hero-poster {
+        width: 100%;
+        border-radius: 1.1rem;
+        display: block;
+      }
+
+      .hero-copy {
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0.7rem;
+        padding: 0.75rem 0.95rem;
+        border-radius: 1rem;
+        background: rgba(0, 0, 0, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        font-size: clamp(0.9rem, 1.35vw, 1.18rem);
+        line-height: 1.4;
+      }
+
+      .hero-section .py-vh-3 {
+        padding-top: 3.2vh;
+        padding-bottom: 3.2vh;
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: clamp(1.45rem, 8vw, 2rem);
+        }
+
+        .hero-copy {
+          padding: 0.65rem 0.75rem;
+        }
+
+        .hero-poster-wrap {
+          border-radius: 1rem;
+          padding: 0.28rem;
+        }
+
+        .hero-poster {
+          border-radius: 0.75rem;
+        }
+
+        .hero-section .py-vh-3 {
+          padding-top: 2.2vh;
+          padding-bottom: 2.2vh;
+        }
+      }
+
+      .featured-kicker {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.35rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(225, 6, 0, 0.1);
+        color: #a10000;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .featured-title {
+        margin: 0.55rem 0 0;
+        font-size: clamp(1.45rem, 2.6vw, 2.2rem);
+        font-weight: 800;
+        letter-spacing: 0.01em;
+        background: linear-gradient(90deg, #111 0%, #3a3a3a 45%, #e10600 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .featured-title::after {
+        content: "";
+        display: block;
+        width: 4.6rem;
+        height: 0.18rem;
+        margin: 0.42rem auto 0;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #e10600, #111);
+      }
+
+      .featured-header-row {
+        padding-top: 1.3rem;
+        padding-bottom: 0.9rem;
+      }
+
+      .featured-subtitle {
+        margin: 0.45rem auto 0.35rem;
+        font-size: 0.92rem;
+        color: #444;
+        max-width: 38rem;
+      }
+
+      .featured-grid {
+        --bs-gutter-x: 1rem;
+        --bs-gutter-y: 1rem;
+      }
+
+      .featured-main-image {
+        max-height: 430px;
+        width: auto;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.75rem;
+        display: block;
+        object-fit: contain;
+      }
+
+      .featured-side-image {
+        max-height: 300px;
+        width: auto;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      @media (max-width: 768px) {
+        .featured-header-row {
+          padding-top: 1rem;
+          padding-bottom: 0.6rem;
+        }
+
+        .featured-main-image {
+          max-height: 330px;
+          margin-bottom: 0.5rem;
+        }
+
+        .featured-side-image {
+          max-height: 230px;
+        }
+      }
+
+      .text-secondary {
+        color: #555 !important;
+      }
+
+      .about-section {
+        background:
+          radial-gradient(circle at 12% 18%, rgba(225, 6, 0, 0.08), transparent 42%),
+          radial-gradient(circle at 90% 86%, rgba(0, 0, 0, 0.07), transparent 38%),
+          #f5f5f6;
+      }
+
+      .about-intro {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 1.5rem;
+        box-shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
+        padding: 2rem 2.15rem;
+        height: 100%;
+      }
+
+      .about-kicker {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.45rem 0.95rem;
+        border-radius: 999px;
+        background: rgba(225, 6, 0, 0.12);
+        color: #9e0000;
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .about-main-title {
+        margin: 1rem 0 0;
+        font-size: clamp(1.85rem, 3.2vw, 3.2rem);
+        line-height: 1.07;
+        letter-spacing: -0.01em;
+      }
+
+      .about-side {
+        display: grid;
+        gap: 1.15rem;
+      }
+
+      .about-card {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 1.25rem;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+        padding: 1.75rem 1.85rem;
+      }
+
+      .about-card h3 {
+        margin: 0 0 0.75rem;
+        font-size: clamp(1.35rem, 2.1vw, 2rem);
+      }
+
+      .about-card p {
+        margin: 0;
+        font-size: 1.02rem;
+        line-height: 1.55;
+      }
+
+      @media (max-width: 768px) {
+        .about-intro,
+        .about-card {
+          padding: 1.4rem 1.2rem;
+        }
+      }
+
+      .model-section-title {
+        color: #111;
+      }
+
+      .reviews-section {
+        background:
+          radial-gradient(circle at 10% 10%, rgba(225, 6, 0, 0.08), transparent 40%),
+          radial-gradient(circle at 90% 90%, rgba(0, 0, 0, 0.08), transparent 35%),
+          #f7f7f8;
+      }
+
+      .reviews-shell {
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      }
+
+      .review-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(225, 6, 0, 0.1);
+        color: #a10000;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+
+      .review-card {
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 1.5rem;
+        background: #fff;
+        box-shadow: 0 12px 28px rgba(15, 15, 15, 0.08);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        overflow: hidden;
+      }
+
+      .review-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 34px rgba(15, 15, 15, 0.12);
+      }
+
+      .review-stars {
+        color: #ffb800;
+        letter-spacing: 0.15em;
+        font-size: 0.9rem;
+        line-height: 1;
+      }
+
+      .review-card .card-body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 1.5rem 1.65rem 1.35rem !important;
+      }
+
+      .review-quote {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #1c1c1c;
+        margin-bottom: 1rem;
+        overflow-wrap: anywhere;
+        padding-right: 0.25rem;
+      }
+
+      @media (min-width: 992px) {
+        .review-quote {
+          min-height: 7rem;
+        }
+      }
+
+      .review-author {
+        margin-top: auto;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .review-avatar {
+        width: 2.45rem;
+        height: 2.45rem;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(145deg, #161616, #4b4b4b);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.82rem;
+        flex-shrink: 0;
+      }
+
+      .review-name {
+        margin: 0 0 0.2rem;
+        line-height: 1.2;
+        font-size: 1.05rem;
+      }
+
+      .review-role {
+        color: #6a6a6a;
+        font-size: 0.92rem;
+        line-height: 1.25;
+      }
+
+      .review-score {
+        background: #111;
+        color: #fff;
+        border-radius: 1rem;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 1rem 2rem;
+        padding: 1.1rem 2rem 1.05rem !important;
+      }
+
+      .review-score-title {
+        margin: 0 0 0.25rem;
+        text-transform: uppercase;
+        font-size: 0.92rem;
+        opacity: 0.75;
+        letter-spacing: 0.04em;
+      }
+
+      .review-score-value {
+        margin: 0;
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 700;
+        line-height: 1.1;
+      }
+
+      @media (max-width: 1200px) {
+        .site-brand-logo {
+          height: 78px;
+        }
+
+        .site-brand-title {
+          font-size: 1.55rem;
+        }
+
+        .site-links {
+          gap: 1.4rem;
+        }
+
+        .navbar.scrolled .site-brand-logo {
+          height: 52px;
+        }
+
+        .hero-poster-wrap {
+          max-width: 46rem;
+        }
+
+        .hero-copy {
+          max-width: 40rem;
+        }
+      }
+
+      .review-score-note {
+        margin: 0;
+        font-size: 1.02rem;
+        opacity: 0.8;
+        max-width: 24ch;
+        margin-left: auto;
+      }
+
+      .reviews-section .model-section-title {
+        font-size: clamp(1.85rem, 2.6vw, 2.75rem);
+      }
+
+      .reviews-section .text-secondary {
+        font-size: 0.8rem;
+      }
+
+      .review-score-meta {
+        text-align: right;
+        padding-left: 0.75rem;
+      }
+
+      @media (max-width: 768px) {
+        .review-score {
+          grid-template-columns: 1fr;
+          gap: 0.75rem;
+          padding: 1rem 1.15rem !important;
+        }
+
+        .review-score-meta {
+          text-align: left;
+          padding-left: 0;
+        }
+
+        .review-score-note {
+          margin-left: 0;
+        }
+      }
+
+      .contact-section {
+        background:
+          radial-gradient(circle at 10% 10%, rgba(225, 6, 0, 0.28), transparent 35%),
+          radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.08), transparent 40%),
+          linear-gradient(165deg, #121212 0%, #0b0b0b 100%);
+      }
+
+      .contact-shell {
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 1.6rem;
+        padding: 2.1rem;
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
+      }
+
+      .contact-kicker {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.38rem 0.88rem;
+        border-radius: 999px;
+        background: rgba(225, 6, 0, 0.2);
+        color: #ffb6b3;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .contact-title {
+        margin: 0.9rem 0 0.5rem;
+        font-size: clamp(2rem, 4.2vw, 3.15rem);
+      }
+
+      .contact-lead {
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 1.05rem;
+        max-width: 46rem;
+      }
+
+      .contact-card {
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 1.2rem;
+        background: rgba(255, 255, 255, 0.06);
+        padding: 1.25rem 1.3rem;
+      }
+
+      .contact-card h3 {
+        margin-bottom: 0.9rem;
+      }
+
+      .contact-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .contact-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.65rem;
+        align-items: start;
+      }
+
+      .contact-icon {
+        width: 1rem;
+        height: 1rem;
+        margin-top: 0.22rem;
+        opacity: 0.92;
+      }
+
+      .contact-link {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-link:hover {
+        color: #ffd7d6;
+      }
+
+      .contact-branch {
+        margin: 0 0 0.24rem;
+        font-size: 1rem;
+      }
+
+      .contact-address {
+        color: rgba(255, 255, 255, 0.83);
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 768px) {
+        .contact-shell {
+          padding: 1.35rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-dark mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
+    <nav id="navScroll" class="navbar navbar-dark bg-black px-vw-5" tabindex="0">
+      <div class="container">
+        <div class="site-nav">
+          <a class="site-brand" href="index.html">
+            <img src="img/logosp.png" alt="Sreypov Motorshop Logo" class="site-brand-logo me-3">
+            <span class="site-brand-title mb-0 text-white fw-normal">Sreypov Motorshop</span>
+          </a>
+          <div class="site-links">
+            <a href="#about" class="site-link">About Us</a>
+            <a href="motorbike-model.html" class="site-link">Product</a>
+            <a href="#contact" class="site-link">Contact Us</a>
+            <a href="cart.html" class="site-link">Cart</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero-section w-100 overflow-hidden position-relative" data-aos="fade">
+        <div class="hero-overlay position-absolute w-100 h-100 top-0 start-0"></div>
+        <div class="container hero-content py-vh-3 position-relative mt-2 px-vw-5 text-center">
+          <div class="row d-flex align-items-center justify-content-center py-vh-3">
+            <div class="col-12 mt-3">
+              <span class="hero-kicker">Sreypov Motorshop</span>
+              <h1 class="hero-title text-white">Ride Today, Pay with Ease.</h1>
+              <div class="hero-poster-wrap">
+                <img src="img/webp/topposter.png" alt="Main promotional motorbike poster" class="hero-poster">
+              </div>
+            </div>
+            <div class="col-12 col-xl-8 mt-4">
+              <p class="lead mb-0 fw-medium hero-copy">We offer Honda motorcycle models with flexible payment options. Pay in cash or enjoy our trusted installment service with low monthly payments and only 1% interest.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-100 position-relative bg-white text-dark bg-cover d-flex align-items-center">
+        <div class="container-fluid px-vw-5">
+          <div class="position-absolute w-100 h-50 bg-light bottom-0 start-0"></div>
+          <div class="row position-relative justify-content-center featured-header-row">
+            <div class="col-12 text-center">
+              <span class="featured-kicker">Showroom Highlight</span>
+              <h2 class="featured-title">Featured Models</h2>
+              <p class="featured-subtitle">Explore three standout Honda choices loved by our customers.</p>
+            </div>
+          </div>
+          <div class="row featured-grid d-flex align-items-center position-relative justify-content-center px-0">
+            <div class="col-12 col-lg-6">
+              <img src="img/webp/click27.png" width="2280" height="1732" alt="Honda Click 2027 side view" class="img-fluid featured-main-image position-relative rounded-5 shadow" data-aos="fade-up">
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <img src="img/webp/dream26.png" width="1116" height="1578" alt="Honda Dream 2026 model" class="img-fluid featured-side-image position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <img src="img/webp/wave25.png" width="1116" height="848" alt="Honda Wave 2025 model" class="img-fluid featured-side-image position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="3000">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="about">
+        <div class="container px-vw-5 py-vh-5">
+          <div class="row d-flex align-items-stretch g-4">
+            <div class="col-12 col-lg-7" data-aos="fade-right">
+              <div class="about-intro">
+                <span class="about-kicker">About Us</span>
+                <h2 class="about-main-title">Since 2016, SP Motorshop has helped over 70,000 Cambodians own their dream motorbike through cash and easy installment plans.</h2>
+              </div>
+            </div>
+            <div class="col-12 col-lg-5" data-aos="fade-left">
+              <div class="about-side">
+                <article class="about-card">
+                  <h3>Our Installment Plans</h3>
+                  <p class="text-secondary">Own your dream motorbike with flexible financing, choose a 0% to 75% down payment, interest rates below 2%, 0% administration fees, and no penalty for early principal settlement.</p>
+                </article>
+
+                <article class="about-card">
+                  <h3>Aftersales Service</h3>
+                  <p class="text-secondary">Enjoy peace of mind with our trusted aftersales service. When you are ready to upgrade, we will buy back your motorbike at a competitive market price.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews-section py-vh-3" id="reviews">
+        <div class="container px-vw-5">
+          <div class="reviews-shell rounded-5 bg-white overflow-hidden p-5">
+            <div class="text-center mb-5">
+              <span class="review-kicker mb-3">What Riders Say</span>
+              <h2 class="display-5 fw-bold model-section-title mt-3">Customer Reviews</h2>
+              <p class="text-secondary mb-0">Trusted by riders across Phnom Penh and beyond for transparent plans and reliable aftersales support.</p>
+            </div>
+
+            <div class="review-score p-4 mb-4" data-aos="fade-up">
+              <div>
+                <p class="review-score-title">Average Customer Rating</p>
+                <p class="review-score-value">4.9 / 5.0</p>
+              </div>
+              <div class="review-score-meta">
+                <p class="review-stars mb-1">★★★★★</p>
+                <p class="review-score-note">Based on verified in-store buyers</p>
+              </div>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up">
+                <article class="review-card h-100">
+                  <div class="card-body p-4">
+                    <p class="review-stars mb-3">★★★★★</p>
+                    <p class="review-quote">"The installment process was easy and transparent. I got my Honda Dream the same day with no stress."</p>
+                    <div class="review-author">
+                      <span class="review-avatar">SP</span>
+                      <div>
+                        <h3 class="h6 review-name">Sokha P.</h3>
+                        <p class="review-role mb-0">Honda Dream 2026 Owner</p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <article class="review-card h-100">
+                  <div class="card-body p-4">
+                    <p class="review-stars mb-3">★★★★★</p>
+                    <p class="review-quote">"Very friendly team. They explained monthly payments clearly and helped me choose the right model for work."</p>
+                    <div class="review-author">
+                      <span class="review-avatar">CM</span>
+                      <div>
+                        <h3 class="h6 review-name">Chanthy M.</h3>
+                        <p class="review-role mb-0">Honda Wave 2025 Owner</p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <article class="review-card h-100">
+                  <div class="card-body p-4">
+                    <p class="review-stars mb-3">★★★★★</p>
+                    <p class="review-quote">"Aftersales service is excellent. They helped me with maintenance quickly and the staff were professional."</p>
+                    <div class="review-author">
+                      <span class="review-avatar">VR</span>
+                      <div>
+                        <h3 class="h6 review-name">Vanna R.</h3>
+                        <p class="review-role mb-0">Honda Click 2027 Owner</p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+              <a href="motorbike-model.html" class="btn btn-dark rounded-pill px-4">Explore Our Models</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section id="contact" class="contact-section text-white py-vh-4">
+      <div class="container px-vw-5">
+        <div class="contact-shell">
+          <span class="contact-kicker">Contact Us</span>
+          <h2 class="contact-title">Let Us Help You Ride Home Today</h2>
+          <p class="contact-lead">Contact our team for sales inquiries, installment plans, and aftersales support. We are ready to guide you from model selection to ownership.</p>
+
+          <div class="row g-3 mt-2">
+            <div class="col-12 col-lg-5">
+              <article class="contact-card">
+                <h3 class="h5">Phone Numbers</h3>
+                <ul class="contact-list">
+                  <li class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="contact-icon" aria-hidden="true">
+                      <path d="M1.885.511a1.745 1.745 0 0 1 2.61.163L5.29 2.98c.329.446.445 1.02.283 1.555l-.547 1.77a.678.678 0 0 0 .178.673l2.457 2.458a.678.678 0 0 0 .673.178l1.77-.547c.535-.162 1.11-.046 1.555.283l2.306 1.795c.829.645.905 1.872.163 2.61l-1.034 1.034c-.74.74-2.01.66-2.73-.12C9.072 13.48 2.52 6.93 1.006 5.414c-.78-.72-.86-1.99-.12-2.73L1.885.511z"/>
+                    </svg>
+                    <a href="tel:+85598525354" class="contact-link">098 52 53 54</a>
+                  </li>
+                  <li class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="contact-icon" aria-hidden="true">
+                      <path d="M1.885.511a1.745 1.745 0 0 1 2.61.163L5.29 2.98c.329.446.445 1.02.283 1.555l-.547 1.77a.678.678 0 0 0 .178.673l2.457 2.458a.678.678 0 0 0 .673.178l1.77-.547c.535-.162 1.11-.046 1.555.283l2.306 1.795c.829.645.905 1.872.163 2.61l-1.034 1.034c-.74.74-2.01.66-2.73-.12C9.072 13.48 2.52 6.93 1.006 5.414c-.78-.72-.86-1.99-.12-2.73L1.885.511z"/>
+                    </svg>
+                    <a href="tel:+85578414183" class="contact-link">078 41 41 83</a>
+                  </li>
+                  <li class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="contact-icon" aria-hidden="true">
+                      <path d="M1.885.511a1.745 1.745 0 0 1 2.61.163L5.29 2.98c.329.446.445 1.02.283 1.555l-.547 1.77a.678.678 0 0 0 .178.673l2.457 2.458a.678.678 0 0 0 .673.178l1.77-.547c.535-.162 1.11-.046 1.555.283l2.306 1.795c.829.645.905 1.872.163 2.61l-1.034 1.034c-.74.74-2.01.66-2.73-.12C9.072 13.48 2.52 6.93 1.006 5.414c-.78-.72-.86-1.99-.12-2.73L1.885.511z"/>
+                    </svg>
+                    <a href="tel:+855884141087" class="contact-link">088 41 41 087</a>
+                  </li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="col-12 col-lg-7">
+              <article class="contact-card">
+                <h3 class="h5">Our Locations</h3>
+                <ul class="contact-list">
+                  <li class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="contact-icon" aria-hidden="true">
+                      <path d="M8 0a5 5 0 0 0-5 5c0 4.418 5 11 5 11s5-6.582 5-11a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+                    </svg>
+                    <div>
+                      <h4 class="contact-branch">Branch 1</h4>
+                      <p class="contact-address">St. 163, Sangkat Veal Vong, 7 Makara District, Phnom Penh</p>
+                    </div>
+                  </li>
+                  <li class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="contact-icon" aria-hidden="true">
+                      <path d="M8 0a5 5 0 0 0-5 5c0 4.418 5 11 5 11s5-6.582 5-11a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+                    </svg>
+                    <div>
+                      <h4 class="contact-branch">Branch 2</h4>
+                      <p class="contact-address">Veng Sreng Boulevard, Sangkat Chom Chao, Por Senchey District, Phnom Penh</p>
+                    </div>
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-black text-white">
+      <div class="container py-5">
+        <div class="row gy-4 align-items-center">
+          <div class="col-12 col-md-6">
+            <a href="index.html" class="d-flex align-items-center text-white text-decoration-none mb-2">
+              <img src="img/logosp.png" alt="Sreypov Motorshop" style="height: 48px; width: auto;" class="me-2">
+              <span class="fw-bold fs-5">Sreypov Motorshop</span>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 text-md-end small text-secondary">
+            &copy; 2026 Sreypov Motorshop. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800
+      });
+    </script>
+    <script>
+      const header = document.querySelector(".navbar");
+
+      if (header) {
+        const headerHeight = header.offsetHeight;
+
+        const addClassOnScroll = () => header.classList.add("scrolled", "shadow-sm");
+        const removeClassOnScroll = () => header.classList.remove("scrolled", "shadow-sm");
+
+        window.addEventListener("scroll", function () {
+          const scrollPos = window.scrollY;
+
+          if (scrollPos >= headerHeight) {
+            addClassOnScroll();
+          } else {
+            removeClassOnScroll();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

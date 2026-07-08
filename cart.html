@@ -1,0 +1,1532 @@
+<!doctype html>
+<html class="h-100" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description" content="Manage your motorbike cart at Sreypov Motorshop">
+    <meta name="author" content="Sreypov Motorshop">
+
+    <title>Cart | Sreypov Motorshop</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logosp.png">
+    <link rel="shortcut icon" href="img/logosp.png">
+    <link rel="icon" type="image/png" sizes="any" href="img/logosp.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logosp.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/logosp.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/logosp.png">
+    <link rel="stylesheet" href="css/theme.min.css">
+
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src:
+          local(""),
+          url("fonts/inter-v12-latin-300.woff2") format("woff2"),
+          url("fonts/inter-v12-latin-300.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src:
+          local(""),
+          url("fonts/inter-v12-latin-regular.woff2") format("woff2"),
+          url("fonts/inter-v12-latin-regular.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src:
+          local(""),
+          url("fonts/inter-v12-latin-500.woff2") format("woff2"),
+          url("fonts/inter-v12-latin-500.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src:
+          local(""),
+          url("fonts/inter-v12-latin-700.woff2") format("woff2"),
+          url("fonts/inter-v12-latin-700.woff") format("woff");
+      }
+
+      :root {
+        --brand-red: #e10600;
+        --brand-ink: #121212;
+        --brand-border: rgba(18, 18, 18, 0.1);
+        --font-primary: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+
+      html {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body,
+      button,
+      input,
+      select,
+      textarea {
+        font-family: var(--font-primary);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-primary);
+        letter-spacing: -0.01em;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at top left, rgba(225, 6, 0, 0.08), transparent 28%),
+          linear-gradient(180deg, #ffffff 0%, #f7f7f8 100%);
+      }
+
+      .navbar,
+      .navbar.scrolled {
+        background-color: #000 !important;
+        position: sticky;
+        top: 0;
+        z-index: 1100;
+        transition: padding 0.25s ease, background-color 0.25s ease;
+      }
+
+      .navbar {
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+      }
+
+      .navbar.scrolled {
+        padding-top: 0.34rem;
+        padding-bottom: 0.34rem;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 1.5rem;
+      }
+
+      .site-brand {
+        display: inline-flex;
+        align-items: center;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .site-brand-title {
+        font-size: clamp(1.45rem, 2.2vw, 2rem);
+        line-height: 1.15;
+        transition: font-size 0.25s ease;
+      }
+
+      .site-brand-logo {
+        height: 92px;
+        max-width: 100%;
+        transition: height 0.25s ease;
+      }
+
+      .site-links {
+        display: flex;
+        align-items: center;
+        gap: 2.25rem;
+        transition: gap 0.25s ease;
+      }
+
+      .site-link {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: 0.01em;
+        opacity: 0.92;
+        transition: opacity 0.2s ease, color 0.2s ease, font-size 0.25s ease;
+      }
+
+      .site-link.active,
+      .site-link:hover,
+      .site-link:focus {
+        color: #fff;
+        opacity: 1;
+      }
+
+      .navbar.scrolled .site-brand-logo {
+        height: 58px;
+      }
+
+      .navbar.scrolled .site-brand-title {
+        font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+      }
+
+      .navbar.scrolled .site-links {
+        gap: 1.35rem;
+      }
+
+      .navbar.scrolled .site-link {
+        font-size: 0.92rem;
+      }
+
+      .cart-hero {
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.22), transparent 24%),
+          radial-gradient(circle at 88% 82%, rgba(225, 6, 0, 0.38), transparent 28%),
+          linear-gradient(135deg, #0e0e10 0%, #252629 40%, #7f0000 100%);
+        color: #fff;
+      }
+
+      .cart-hero-shell {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.45rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero-title {
+        margin-top: 0.9rem;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1.06;
+      }
+
+      .hero-copy {
+        margin-top: 0.8rem;
+        color: rgba(255, 255, 255, 0.82);
+        max-width: 42rem;
+      }
+
+      .cart-section {
+        margin-top: -2.2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .cart-shell {
+        border-radius: 2rem;
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+        padding: clamp(1.4rem, 2.8vw, 2.4rem);
+      }
+
+      .cart-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .cart-title {
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        margin: 0;
+      }
+
+      .cart-count {
+        color: #5f6674;
+        font-size: 0.95rem;
+      }
+
+      .cart-empty {
+        text-align: center;
+        border: 1px dashed var(--brand-border);
+        background: #fafbfc;
+        border-radius: 1.2rem;
+        padding: 2rem 1.2rem;
+      }
+
+      .cart-empty h3 {
+        margin-bottom: 0.4rem;
+      }
+
+      .cart-list {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .cart-item {
+        display: grid;
+        grid-template-columns: 130px 1fr auto;
+        gap: 1rem;
+        padding: 1rem;
+        border: 1px solid var(--brand-border);
+        border-radius: 1rem;
+        background: #fff;
+      }
+
+      .cart-item-image {
+        width: 100%;
+        height: 100px;
+        object-fit: contain;
+        border-radius: 0.8rem;
+        background: #f5f6f8;
+        padding: 0.45rem;
+      }
+
+      .cart-item-name {
+        margin: 0;
+        font-size: 1.25rem;
+      }
+
+      .cart-item-meta {
+        color: #5f6674;
+        margin-top: 0.35rem;
+      }
+
+      .cart-item-price {
+        margin-top: 0.5rem;
+        font-weight: 700;
+        color: var(--brand-red);
+      }
+
+      .qty-wrap {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #d7dce5;
+        border-radius: 999px;
+        overflow: hidden;
+        margin-top: 0.65rem;
+      }
+
+      .qty-btn {
+        border: none;
+        background: #fff;
+        width: 2rem;
+        height: 2rem;
+        font-weight: 700;
+        color: var(--brand-ink);
+      }
+
+      .qty-input {
+        width: 3rem;
+        height: 2rem;
+        border: none;
+        border-left: 1px solid #e5e8ee;
+        border-right: 1px solid #e5e8ee;
+        text-align: center;
+      }
+
+      .cart-item-actions {
+        display: grid;
+        gap: 0.55rem;
+        align-content: start;
+        min-width: 170px;
+      }
+
+      .btn-pill {
+        border-radius: 999px;
+        padding: 0.58rem 0.95rem;
+        font-weight: 700;
+        border: 1px solid transparent;
+        background: #fff;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn-pill:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-buy {
+        background: linear-gradient(135deg, #ec1b11, #b80000);
+        color: #fff;
+        box-shadow: 0 10px 20px rgba(225, 6, 0, 0.24);
+      }
+
+      .btn-remove {
+        color: #b70000;
+        border-color: rgba(183, 0, 0, 0.3);
+      }
+
+      .cart-summary {
+        margin-top: 1.2rem;
+        border: 1px solid var(--brand-border);
+        border-radius: 1rem;
+        padding: 1rem;
+        background: #f9fafb;
+      }
+
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 0.4rem;
+        color: #4f5663;
+      }
+
+      .summary-row strong {
+        color: var(--brand-ink);
+      }
+
+      .summary-row.total {
+        margin-top: 0.55rem;
+        padding-top: 0.55rem;
+        border-top: 1px solid #dfe3ea;
+        font-size: 1.1rem;
+      }
+
+      .summary-row.total strong:last-child {
+        color: var(--brand-red);
+      }
+
+      .cart-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+
+      .checkout-panel {
+        margin-top: 1.2rem;
+        border: 1px solid var(--brand-border);
+        border-radius: 1rem;
+        padding: 1rem;
+        background: #fff;
+      }
+
+      .checkout-panel h3 {
+        margin-bottom: 0.75rem;
+      }
+
+      .checkout-kicker {
+        color: #5f6674;
+        margin-bottom: 0.9rem;
+      }
+
+      .pay-type-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        margin-bottom: 0.9rem;
+      }
+
+      .pay-type {
+        border: 1px solid #d7dce5;
+        border-radius: 0.9rem;
+        padding: 0.85rem;
+        background: #fafbfc;
+      }
+
+      .pay-type input {
+        margin-right: 0.4rem;
+      }
+
+      .checkout-panel[data-payment-type="installment"] #paySummaryBox {
+        display: none !important;
+      }
+
+      .pay-summary {
+        border: 1px solid #dfe3ea;
+        border-radius: 0.9rem;
+        padding: 0.85rem;
+        background: #f9fafb;
+        margin-bottom: 0.9rem;
+      }
+
+      .pay-summary-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .pay-summary-row.total {
+        margin-top: 0.55rem;
+        padding-top: 0.45rem;
+        border-top: 1px solid #dfe3ea;
+        font-weight: 700;
+      }
+
+      .pay-summary-row.total span:last-child {
+        color: var(--brand-red);
+      }
+
+      .monthly-note {
+        background: #eef8fd;
+        border-left: 4px solid #0099cc;
+        border-radius: 0.6rem;
+        padding: 0.7rem 0.8rem;
+        color: #29566e;
+        margin-bottom: 0.9rem;
+      }
+
+      .checkout-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+
+      .checkout-field {
+        margin-bottom: 0.75rem;
+      }
+
+      .checkout-field label {
+        display: block;
+        margin-bottom: 0.35rem;
+        font-weight: 600;
+      }
+
+      .checkout-field input:not([type="checkbox"]) {
+        width: 100%;
+        border: 1px solid #d7dce5;
+        border-radius: 0.8rem;
+        padding: 0.65rem 0.8rem;
+      }
+
+      .checkout-field input:not([type="checkbox"]):focus {
+        border-color: rgba(225, 6, 0, 0.35);
+        outline: none;
+      }
+
+      .checkout-terms-field {
+        border: 1px solid #dfe3ea;
+        border-radius: 0.85rem;
+        background: #fafbfc;
+        padding: 0.8rem 0.9rem;
+      }
+
+      .checkout-terms-copy {
+        margin: 0;
+        color: #2f3642;
+        font-weight: 600;
+      }
+
+      .checkout-terms-toggle {
+        margin-top: 0.6rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        cursor: pointer;
+        user-select: none;
+        font-weight: 500;
+        color: #4f5663;
+      }
+
+      .checkout-terms-toggle input[type="checkbox"] {
+        width: 1.15rem;
+        height: 1.15rem;
+        accent-color: var(--brand-red);
+      }
+
+      .checkout-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 0.8rem;
+      }
+
+      .checkout-success {
+        background: #e8f8ef;
+        color: #135e2f;
+        border: 1px solid #b8e4c7;
+        border-radius: 0.8rem;
+        padding: 0.75rem 0.8rem;
+        margin-bottom: 0.85rem;
+      }
+
+      .field-error {
+        color: #c01919;
+        font-size: 0.82rem;
+        margin-top: 0.2rem;
+      }
+
+      .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        display: none;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 1rem;
+      }
+
+      .modal.show {
+        display: block;
+      }
+
+      .modal-dialog {
+        position: relative;
+        width: auto;
+        max-width: 560px;
+        margin: 1.5rem auto;
+        pointer-events: none;
+      }
+
+      .modal-content {
+        pointer-events: auto;
+        background: #fff;
+        border: 1px solid #dfe3ea;
+        border-radius: 1rem;
+        box-shadow: 0 24px 50px rgba(15, 23, 42, 0.22);
+        overflow: hidden;
+      }
+
+      .modal-header,
+      .modal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.95rem 1.1rem;
+      }
+
+      .modal-header {
+        border-bottom: 1px solid #e5e8ee;
+      }
+
+      .modal-body {
+        padding: 1rem 1.1rem;
+      }
+
+      .modal-footer {
+        justify-content: flex-end;
+        gap: 0.55rem;
+        border-top: 1px solid #e5e8ee;
+      }
+
+      .btn-close {
+        border: none;
+        background: transparent;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 999px;
+        color: #5b6471;
+        font-size: 1.45rem;
+        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .btn-close::before {
+        content: "\00D7";
+      }
+
+      .qr-modal-copy {
+        color: #505867;
+      }
+
+      #cashQrModal .modal-dialog {
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #cashQrModal .modal-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .qr-placeholder-img {
+        width: min(620px, 100%);
+        height: auto;
+        border-radius: 0.9rem;
+        border: 1px solid #d8dde7;
+        background: #f9fafb;
+        padding: 0.45rem;
+        display: block;
+        margin: 0.75rem auto 0;
+      }
+
+      .btn-main,
+      .btn-outline,
+      .btn-ghost {
+        border-radius: 999px;
+        padding: 0.72rem 1.1rem;
+        font-weight: 700;
+        border: 1px solid transparent;
+        text-decoration: none;
+      }
+
+      .btn-main {
+        background: linear-gradient(135deg, #ec1b11, #b80000);
+        color: #fff;
+        box-shadow: 0 10px 20px rgba(225, 6, 0, 0.24);
+      }
+
+      .btn-outline {
+        background: #fff;
+        color: var(--brand-red);
+        border-color: rgba(225, 6, 0, 0.32);
+      }
+
+      .btn-ghost {
+        background: #fff;
+        color: #4f5663;
+        border-color: rgba(18, 18, 18, 0.16);
+      }
+
+      .btn-main:disabled,
+      .btn-outline:disabled,
+      .btn-ghost:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      footer {
+        background-color: #000;
+        color: #fff;
+        margin-top: 2.5rem;
+      }
+
+      @media (max-width: 1200px) {
+        .site-brand-logo {
+          height: 78px;
+        }
+
+        .site-brand-title {
+          font-size: 1.55rem;
+        }
+
+        .site-links {
+          gap: 1.4rem;
+        }
+
+        .navbar.scrolled .site-brand-logo {
+          height: 52px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .cart-item {
+          grid-template-columns: 1fr;
+        }
+
+        .cart-item-image {
+          height: 160px;
+        }
+
+        .cart-item-actions {
+          min-width: 0;
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar,
+        .navbar.scrolled {
+          padding-top: 0.45rem;
+          padding-bottom: 0.45rem;
+        }
+
+        .site-nav {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.8rem;
+        }
+
+        .site-links {
+          gap: 1.25rem;
+          padding-left: 0.25rem;
+          flex-wrap: wrap;
+        }
+
+        .cart-section {
+          margin-top: -1.2rem;
+        }
+
+        .cart-head {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .cart-item-actions {
+          grid-template-columns: 1fr;
+        }
+
+        .pay-type-grid,
+        .checkout-grid {
+          grid-template-columns: 1fr;
+        }
+
+        #cashQrModal .modal-dialog {
+          max-width: 96vw;
+        }
+
+        .qr-placeholder-img {
+          width: min(92vw, 560px);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-dark mt-0">
+    <nav id="navScroll" class="navbar navbar-dark bg-black px-vw-5" tabindex="0">
+      <div class="container">
+        <div class="site-nav">
+          <a class="site-brand" href="index.html">
+            <img src="img/logosp.png" alt="Sreypov Motorshop Logo" class="site-brand-logo me-3">
+            <span class="site-brand-title mb-0 text-white fw-normal">Sreypov Motorshop</span>
+          </a>
+          <div class="site-links">
+            <a href="index.html#about" class="site-link">About Us</a>
+            <a href="motorbike-model.html" class="site-link">Product</a>
+            <a href="index.html#contact" class="site-link">Contact Us</a>
+            <a href="cart.html" class="site-link active">Cart</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="cart-hero py-vh-3">
+        <div class="container px-vw-5 cart-hero-shell">
+          <span class="hero-eyebrow">Shopping Cart</span>
+          <h1 class="hero-title">Review your selected motorbikes before payment.</h1>
+          <p class="hero-copy mb-0">Update quantities, remove items you do not need, and proceed to payment when you are ready.</p>
+        </div>
+      </section>
+
+      <section class="cart-section py-vh-3">
+        <div class="container px-vw-5">
+          <div class="cart-shell">
+            <div class="cart-head">
+              <h2 class="cart-title">Your Cart</h2>
+              <div id="cartCount" class="cart-count">0 items</div>
+            </div>
+
+            <div id="cartEmpty" class="cart-empty" hidden>
+              <h3>Your cart is empty</h3>
+              <p class="mb-3">Add a model from the product page to continue.</p>
+              <a href="motorbike-model.html" class="btn-outline">Browse Models</a>
+            </div>
+
+            <div id="cartList" class="cart-list"></div>
+
+            <div id="cartSummary" class="cart-summary" hidden>
+              <div class="summary-row">
+                <strong>Total Items</strong>
+                <strong id="summaryItems">0</strong>
+              </div>
+              <div class="summary-row total">
+                <strong>Estimated Total</strong>
+                <strong id="summaryTotal">$0.00</strong>
+              </div>
+
+              <div class="cart-actions">
+                <a href="motorbike-model.html" class="btn-ghost">Continue Shopping</a>
+                <button id="clearCartBtn" type="button" class="btn-outline">Clear Cart</button>
+                <button id="checkoutBtn" type="button" class="btn-main">Checkout in Cart</button>
+              </div>
+            </div>
+
+            <section id="checkoutPanel" class="checkout-panel" hidden>
+              <h3>Complete Payment in Cart</h3>
+              <p id="checkoutKicker" class="checkout-kicker">Pay for all items in your cart.</p>
+
+              <div id="checkoutSuccess" class="checkout-success" hidden>
+                Order placed successfully. Thank you for your purchase.
+              </div>
+
+              <div class="pay-type-grid">
+                <label class="pay-type">
+                  <input type="radio" name="cartPaymentType" value="cash" checked>
+                  <strong>Cash Payment</strong>
+                  <div>5% discount applied</div>
+                </label>
+                <label class="pay-type">
+                  <input type="radio" name="cartPaymentType" value="installment">
+                  <strong>Installment Plan</strong>
+                  <div>12 months at 8% per annum</div>
+                </label>
+              </div>
+
+              <div class="pay-summary" id="paySummaryBox">
+                <div class="pay-summary-row"><span>Base Total</span><span id="payBase">$0.00</span></div>
+                <div class="pay-summary-row" id="payDiscountRow"><span>Discount (5%)</span><span id="payDiscount">-$0.00</span></div>
+                <div class="pay-summary-row" id="payInterestRow" hidden><span>Interest</span><span id="payInterest">$0.00</span></div>
+                <div class="pay-summary-row total"><span>Total to Pay</span><span id="payTotal">$0.00</span></div>
+              </div>
+
+              <form id="checkoutForm">
+                <div class="checkout-grid">
+                  <div class="checkout-field">
+                    <label for="checkoutFirstName">First Name *</label>
+                    <input id="checkoutFirstName" type="text" required>
+                    <div id="errorFirstName" class="field-error"></div>
+                  </div>
+                  <div class="checkout-field">
+                    <label for="checkoutLastName">Last Name *</label>
+                    <input id="checkoutLastName" type="text" required>
+                    <div id="errorLastName" class="field-error"></div>
+                  </div>
+                </div>
+                <div class="checkout-grid">
+                  <div class="checkout-field">
+                    <label for="checkoutEmail">Email *</label>
+                    <input id="checkoutEmail" type="email" required>
+                    <div id="errorEmail" class="field-error"></div>
+                  </div>
+                  <div class="checkout-field">
+                    <label for="checkoutPhone">Phone *</label>
+                    <input id="checkoutPhone" type="tel" required>
+                    <div id="errorPhone" class="field-error"></div>
+                  </div>
+                </div>
+                <div class="checkout-field">
+                  <label for="checkoutAddress">Delivery Address *</label>
+                  <input id="checkoutAddress" type="text" required>
+                  <div id="errorAddress" class="field-error"></div>
+                </div>
+                <div class="checkout-field checkout-terms-field">
+                  <label for="checkoutTerms" class="checkout-terms-toggle">
+                    <input id="checkoutTerms" type="checkbox" required>
+                    <span>Before ticking the box, please confirm the information above is correct.</span>
+                  </label>
+                  <div id="errorTerms" class="field-error"></div>
+                </div>
+
+                <div class="checkout-actions">
+                  <button type="button" id="cancelCheckoutBtn" class="btn-ghost">Cancel</button>
+                  <button type="submit" class="btn-main">Place Order</button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal fade" id="cashQrModal" tabindex="-1" aria-labelledby="cashQrModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cashQrModalLabel">Cash Payment QR</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <p class="qr-modal-copy mb-2">Please scan this QR code to complete your payment.</p>
+            <img
+              class="qr-placeholder-img"
+              alt="ABA payment QR code"
+              src="img/webp/qrcodeaba.png"
+            >
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-outline" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="installmentModal" tabindex="-1" aria-labelledby="installmentModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="installmentModalLabel">Installment Confirmation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Thank you for your purchase. Our staff will contact you soon after checkout for installment details.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-outline" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="installmentInfoModal" tabindex="-1" aria-labelledby="installmentInfoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="installmentInfoModalLabel">Installment Plan Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="pay-summary">
+              <div class="pay-summary-row"><span>Base Total</span><span id="installmentInfoBase">$0.00</span></div>
+              <div class="pay-summary-row"><span>Interest (12 months)</span><span id="installmentInfoInterest">$0.00</span></div>
+              <div class="pay-summary-row total"><span>Total Payment</span><span id="installmentInfoTotal">$0.00</span></div>
+            </div>
+            <p id="installmentInfoMonthly" class="mb-0"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-outline" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-black text-white">
+      <div class="container py-5">
+        <div class="row gy-4 align-items-center">
+          <div class="col-12 col-md-6">
+            <a href="index.html" class="d-flex align-items-center text-white text-decoration-none mb-2">
+              <img src="img/logosp.png" alt="Sreypov Motorshop" style="height: 48px; width: auto;" class="me-2">
+              <span class="fw-bold fs-5">Sreypov Motorshop</span>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 text-md-end small text-secondary">
+            &copy; 2026 Sreypov Motorshop. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+      const header = document.querySelector(".navbar");
+      if (header) {
+        const headerHeight = header.offsetHeight;
+        const addClassOnScroll = () => header.classList.add("scrolled", "shadow-sm");
+        const removeClassOnScroll = () => header.classList.remove("scrolled", "shadow-sm");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY >= headerHeight) {
+            addClassOnScroll();
+          } else {
+            removeClassOnScroll();
+          }
+        });
+      }
+
+      const cartListEl = document.querySelector("#cartList");
+      const cartCountEl = document.querySelector("#cartCount");
+      const cartEmptyEl = document.querySelector("#cartEmpty");
+      const cartSummaryEl = document.querySelector("#cartSummary");
+      const summaryItemsEl = document.querySelector("#summaryItems");
+      const summaryTotalEl = document.querySelector("#summaryTotal");
+      const checkoutBtn = document.querySelector("#checkoutBtn");
+      const clearCartBtn = document.querySelector("#clearCartBtn");
+      const checkoutPanel = document.querySelector("#checkoutPanel");
+      const checkoutKicker = document.querySelector("#checkoutKicker");
+      const checkoutForm = document.querySelector("#checkoutForm");
+      const cancelCheckoutBtn = document.querySelector("#cancelCheckoutBtn");
+      const checkoutSuccess = document.querySelector("#checkoutSuccess");
+      const paySummaryBox = document.querySelector("#paySummaryBox");
+      const payBase = document.querySelector("#payBase");
+      const payDiscount = document.querySelector("#payDiscount");
+      const payInterest = document.querySelector("#payInterest");
+      const payTotal = document.querySelector("#payTotal");
+      const payDiscountRow = document.querySelector("#payDiscountRow");
+      const payInterestRow = document.querySelector("#payInterestRow");
+      const payTypeInputs = Array.from(document.querySelectorAll('input[name="cartPaymentType"]'));
+      const cashQrModalEl = document.querySelector("#cashQrModal");
+      const cashQrModal = cashQrModalEl
+        ? new bootstrap.Modal(cashQrModalEl, { backdrop: false, focus: false, keyboard: true })
+        : null;
+      const installmentModalEl = document.querySelector("#installmentModal");
+      const installmentModal = installmentModalEl
+        ? new bootstrap.Modal(installmentModalEl, { backdrop: false, focus: false, keyboard: true })
+        : null;
+      const installmentInfoModalEl = document.querySelector("#installmentInfoModal");
+      const installmentInfoModal = installmentInfoModalEl
+        ? new bootstrap.Modal(installmentInfoModalEl, { backdrop: false, focus: false, keyboard: true })
+        : null;
+      const installmentInfoBase = document.querySelector("#installmentInfoBase");
+      const installmentInfoInterest = document.querySelector("#installmentInfoInterest");
+      const installmentInfoTotal = document.querySelector("#installmentInfoTotal");
+      const installmentInfoMonthly = document.querySelector("#installmentInfoMonthly");
+
+      let checkoutScope = { mode: "all", model: null };
+      let hasPendingOrderCleanup = false;
+
+      const MODEL_PRICE_MAP = {
+        "Honda Dream 2026": 2500,
+        "Honda Wave 2025": 2200,
+        "Honda Scoopy 2026": 2300,
+        "Honda Click 2027": 2600,
+        "Honda Giorno 2026": 3300,
+        "Honda ADV 2026": 4500,
+        "Honda PCX": 3500,
+      };
+
+      const toCurrency = (value) => `$${Number(value).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+      const normalizePrice = (rawPrice, modelName = "") => {
+        if (typeof rawPrice === "number" && Number.isFinite(rawPrice) && rawPrice > 0) {
+          return rawPrice;
+        }
+
+        if (typeof rawPrice === "string") {
+          const parsed = Number.parseFloat(rawPrice.replace(/[^\d.-]/g, ""));
+          if (Number.isFinite(parsed) && parsed > 0) {
+            return parsed;
+          }
+        }
+
+        return MODEL_PRICE_MAP[modelName] || 0;
+      };
+
+      const getInstallmentBreakdown = (baseTotal) => {
+        const annualRate = 0.08;
+        const months = 12;
+        const monthlyRate = annualRate / 12;
+        const monthlyPayment = baseTotal > 0
+          ? baseTotal * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1)
+          : 0;
+        const totalPayment = monthlyPayment * months;
+        const interest = totalPayment - baseTotal;
+
+        return {
+          months,
+          monthlyPayment,
+          totalPayment,
+          interest,
+        };
+      };
+
+      const syncInstallmentInfoModal = (baseTotal) => {
+        const breakdown = getInstallmentBreakdown(baseTotal);
+
+        if (installmentInfoBase) {
+          installmentInfoBase.textContent = toCurrency(baseTotal);
+        }
+        if (installmentInfoInterest) {
+          installmentInfoInterest.textContent = toCurrency(breakdown.interest);
+        }
+        if (installmentInfoTotal) {
+          installmentInfoTotal.textContent = toCurrency(breakdown.totalPayment);
+        }
+        if (installmentInfoMonthly) {
+          installmentInfoMonthly.textContent = `Estimated monthly payment: ${toCurrency(breakdown.monthlyPayment)} for ${breakdown.months} months.`;
+        }
+
+        return breakdown;
+      };
+
+      const showInstallmentInfoModal = (items = null) => {
+        if (!installmentInfoModal) {
+          return;
+        }
+
+        const sourceItems = Array.isArray(items) ? items : getScopeItems();
+        const baseTotal = sourceItems.reduce(
+          (sum, item) => sum + normalizePrice(item.price, item.model) * (Number(item.quantity) || 0),
+          0,
+        );
+
+        syncInstallmentInfoModal(baseTotal);
+        installmentInfoModal.show();
+      };
+
+      const getCartItems = () => {
+        try {
+          const raw = localStorage.getItem("cartItems");
+          const parsed = raw ? JSON.parse(raw) : [];
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      };
+
+      const setCartItems = (items) => {
+        localStorage.setItem("cartItems", JSON.stringify(items));
+      };
+
+      const getScopeItems = () => {
+        const cart = getCartItems();
+        if (checkoutScope.mode === "single" && checkoutScope.model) {
+          return cart.filter((item) => item.model === checkoutScope.model);
+        }
+        return cart;
+      };
+
+      const getScopeLabel = () => {
+        if (checkoutScope.mode === "single" && checkoutScope.model) {
+          return `Pay for ${checkoutScope.model}.`;
+        }
+        return "Pay for all items in your cart.";
+      };
+
+      const getActivePaymentType = () => {
+        const selected = payTypeInputs.find((input) => input.checked);
+        return selected ? selected.value : "cash";
+      };
+
+      const updateCheckoutTotals = () => {
+        const scopeItems = getScopeItems();
+        const baseTotal = scopeItems.reduce(
+          (sum, item) => sum + normalizePrice(item.price, item.model) * (Number(item.quantity) || 0),
+          0,
+        );
+        const paymentType = getActivePaymentType();
+
+        if (checkoutPanel) {
+          checkoutPanel.dataset.paymentType = paymentType;
+        }
+
+        payBase.textContent = toCurrency(baseTotal);
+
+        if (paymentType === "cash") {
+          const discount = baseTotal * 0.05;
+          const finalTotal = baseTotal - discount;
+
+          if (paySummaryBox) {
+            paySummaryBox.hidden = false;
+          }
+          payDiscountRow.hidden = false;
+          payInterestRow.hidden = true;
+          payDiscount.textContent = `-${toCurrency(discount)}`;
+          payTotal.textContent = toCurrency(finalTotal);
+        } else {
+          const breakdown = syncInstallmentInfoModal(baseTotal);
+
+          if (paySummaryBox) {
+            paySummaryBox.hidden = true;
+          }
+          payDiscountRow.hidden = true;
+          payInterestRow.hidden = true;
+          payInterest.textContent = toCurrency(breakdown.interest);
+          payTotal.textContent = toCurrency(breakdown.totalPayment);
+        }
+      };
+
+      const clearErrors = () => {
+        ["FirstName", "LastName", "Email", "Phone", "Address", "Terms"].forEach((name) => {
+          const el = document.querySelector(`#error${name}`);
+          if (el) {
+            el.textContent = "";
+          }
+        });
+      };
+
+      const validateCheckoutForm = () => {
+        clearErrors();
+        let valid = true;
+
+        const firstName = document.querySelector("#checkoutFirstName").value.trim();
+        const lastName = document.querySelector("#checkoutLastName").value.trim();
+        const email = document.querySelector("#checkoutEmail").value.trim();
+        const phone = document.querySelector("#checkoutPhone").value.trim();
+        const address = document.querySelector("#checkoutAddress").value.trim();
+        const terms = document.querySelector("#checkoutTerms").checked;
+
+        if (!firstName) {
+          document.querySelector("#errorFirstName").textContent = "First name is required.";
+          valid = false;
+        }
+        if (!lastName) {
+          document.querySelector("#errorLastName").textContent = "Last name is required.";
+          valid = false;
+        }
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          document.querySelector("#errorEmail").textContent = "Valid email is required.";
+          valid = false;
+        }
+        if (!phone || phone.replace(/\D/g, "").length < 7) {
+          document.querySelector("#errorPhone").textContent = "Valid phone is required.";
+          valid = false;
+        }
+        if (!address) {
+          document.querySelector("#errorAddress").textContent = "Address is required.";
+          valid = false;
+        }
+        if (!terms) {
+          document.querySelector("#errorTerms").textContent = "You must agree to continue.";
+          valid = false;
+        }
+
+        return valid;
+      };
+
+      const openCheckout = (mode = "all", model = null) => {
+        checkoutScope = { mode, model };
+        checkoutKicker.textContent = getScopeLabel();
+        checkoutSuccess.hidden = true;
+        checkoutPanel.hidden = false;
+        updateCheckoutTotals();
+      };
+
+      const finalizeOrderCleanup = () => {
+        if (!hasPendingOrderCleanup) {
+          return;
+        }
+
+        hasPendingOrderCleanup = false;
+        checkoutPanel.hidden = true;
+        renderCart();
+      };
+
+      const unlockBodyScroll = () => {
+        document.body.classList.remove("modal-open");
+        document.body.style.removeProperty("overflow");
+        document.body.style.removeProperty("padding-right");
+      };
+
+      if (cashQrModalEl) {
+        cashQrModalEl.addEventListener("shown.bs.modal", unlockBodyScroll);
+        cashQrModalEl.addEventListener("hidden.bs.modal", finalizeOrderCleanup);
+      }
+
+      if (installmentModalEl) {
+        installmentModalEl.addEventListener("shown.bs.modal", unlockBodyScroll);
+        installmentModalEl.addEventListener("hidden.bs.modal", finalizeOrderCleanup);
+      }
+
+      if (installmentInfoModalEl) {
+        installmentInfoModalEl.addEventListener("shown.bs.modal", unlockBodyScroll);
+        installmentInfoModalEl.addEventListener("hidden.bs.modal", finalizeOrderCleanup);
+      }
+
+      const renderCart = () => {
+        const cartItems = getCartItems().map((item) => ({
+          model: item.model || "Unknown Model",
+          price: normalizePrice(item.price, item.model || ""),
+          image: item.image || "img/webp/dream26red.png",
+          quantity: Math.max(1, Number(item.quantity) || 1),
+          addedAt: item.addedAt || new Date().toISOString(),
+        }));
+
+        setCartItems(cartItems);
+        cartListEl.innerHTML = "";
+
+        const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+        const totalPrice = cartItems.reduce((sum, item) => sum + item.quantity * item.price, 0);
+
+        cartCountEl.textContent = `${totalItems} item${totalItems === 1 ? "" : "s"}`;
+        summaryItemsEl.textContent = String(totalItems);
+        summaryTotalEl.textContent = toCurrency(totalPrice);
+
+        if (!cartItems.length) {
+          cartEmptyEl.hidden = false;
+          cartSummaryEl.hidden = true;
+          checkoutBtn.disabled = true;
+          checkoutPanel.hidden = true;
+          return;
+        }
+
+        cartEmptyEl.hidden = true;
+        cartSummaryEl.hidden = false;
+        checkoutBtn.disabled = false;
+
+        if (!checkoutPanel.hidden) {
+          updateCheckoutTotals();
+        }
+
+        cartItems.forEach((item, index) => {
+          const subtotal = item.price * item.quantity;
+          const row = document.createElement("article");
+          row.className = "cart-item";
+          row.innerHTML = `
+            <img src="${item.image}" alt="${item.model}" class="cart-item-image" loading="lazy">
+            <div>
+              <h3 class="cart-item-name">${item.model}</h3>
+              <div class="cart-item-meta">Unit Price: ${toCurrency(item.price)}</div>
+              <div class="cart-item-price">Subtotal: ${toCurrency(subtotal)}</div>
+              <div class="qty-wrap">
+                <button type="button" class="qty-btn" data-action="decrease" data-index="${index}">-</button>
+                <input type="number" min="1" class="qty-input" data-action="set" data-index="${index}" value="${item.quantity}">
+                <button type="button" class="qty-btn" data-action="increase" data-index="${index}">+</button>
+              </div>
+            </div>
+            <div class="cart-item-actions">
+              <button type="button" class="btn-pill btn-buy" data-action="pay" data-index="${index}">Checkout This Item</button>
+              <button type="button" class="btn-pill btn-remove" data-action="remove" data-index="${index}">Remove Item</button>
+            </div>
+          `;
+          cartListEl.appendChild(row);
+        });
+      };
+
+      cartListEl.addEventListener("click", (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) {
+          return;
+        }
+
+        const action = target.dataset.action;
+        const index = Number(target.dataset.index);
+        if (!action || Number.isNaN(index)) {
+          return;
+        }
+
+        const cartItems = getCartItems();
+        const item = cartItems[index];
+        if (!item) {
+          return;
+        }
+
+        if (action === "decrease") {
+          item.quantity = Math.max(1, (Number(item.quantity) || 1) - 1);
+        } else if (action === "increase") {
+          item.quantity = Math.max(1, (Number(item.quantity) || 1) + 1);
+        } else if (action === "remove") {
+          cartItems.splice(index, 1);
+        } else if (action === "pay") {
+          openCheckout("single", item.model);
+          return;
+        }
+
+        setCartItems(cartItems);
+        renderCart();
+      });
+
+      cartListEl.addEventListener("change", (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLInputElement)) {
+          return;
+        }
+
+        if (target.dataset.action !== "set") {
+          return;
+        }
+
+        const index = Number(target.dataset.index);
+        if (Number.isNaN(index)) {
+          return;
+        }
+
+        const cartItems = getCartItems();
+        if (!cartItems[index]) {
+          return;
+        }
+
+        const nextQuantity = Math.max(1, Number(target.value) || 1);
+        cartItems[index].quantity = nextQuantity;
+        setCartItems(cartItems);
+        renderCart();
+      });
+
+      checkoutBtn.addEventListener("click", () => {
+        const cartItems = getCartItems();
+        if (!cartItems.length) {
+          return;
+        }
+        openCheckout("all");
+      });
+
+      payTypeInputs.forEach((input) => {
+        input.addEventListener("change", () => {
+          updateCheckoutTotals();
+        });
+      });
+
+      cancelCheckoutBtn.addEventListener("click", () => {
+        checkoutPanel.hidden = true;
+      });
+
+      checkoutForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!validateCheckoutForm()) {
+          return;
+        }
+
+        const cartItems = getCartItems();
+        const scopeItems = getScopeItems();
+        if (!scopeItems.length) {
+          checkoutPanel.hidden = true;
+          return;
+        }
+
+        const orderPayload = {
+          paymentType: getActivePaymentType(),
+          checkoutScope,
+          items: scopeItems,
+          customer: {
+            firstName: document.querySelector("#checkoutFirstName").value.trim(),
+            lastName: document.querySelector("#checkoutLastName").value.trim(),
+            email: document.querySelector("#checkoutEmail").value.trim(),
+            phone: document.querySelector("#checkoutPhone").value.trim(),
+            address: document.querySelector("#checkoutAddress").value.trim(),
+          },
+          paidAt: new Date().toISOString(),
+        };
+
+        localStorage.setItem("lastCartCheckout", JSON.stringify(orderPayload));
+
+        let nextCart = cartItems;
+        if (checkoutScope.mode === "single" && checkoutScope.model) {
+          nextCart = cartItems.filter((item) => item.model !== checkoutScope.model);
+        } else {
+          nextCart = [];
+        }
+
+        setCartItems(nextCart);
+        hasPendingOrderCleanup = true;
+
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
+
+        const activePaymentType = getActivePaymentType();
+        if (activePaymentType === "cash") {
+          checkoutSuccess.hidden = true;
+          if (cashQrModal) {
+            cashQrModal.show();
+          } else {
+            finalizeOrderCleanup();
+          }
+        } else {
+          checkoutSuccess.hidden = true;
+          if (installmentInfoModal) {
+            showInstallmentInfoModal(scopeItems);
+          } else if (installmentModal) {
+            installmentModal.show();
+          } else {
+            finalizeOrderCleanup();
+          }
+        }
+
+        checkoutForm.reset();
+        const defaultCash = payTypeInputs.find((input) => input.value === "cash");
+        if (defaultCash) {
+          defaultCash.checked = true;
+        }
+
+      });
+
+      const initCheckoutFromQuery = () => {
+        const params = new URLSearchParams(window.location.search);
+        const checkoutMode = params.get("checkout");
+        const model = params.get("model");
+
+        if (checkoutMode === "single" && model) {
+          const cartItems = getCartItems();
+          const exists = cartItems.some((item) => item.model === model);
+          if (exists) {
+            openCheckout("single", model);
+            return;
+          }
+        }
+
+        if (checkoutMode === "all") {
+          const cartItems = getCartItems();
+          if (cartItems.length) {
+            openCheckout("all");
+          }
+        }
+      };
+
+      clearCartBtn.addEventListener("click", () => {
+        setCartItems([]);
+        renderCart();
+      });
+
+      renderCart();
+      initCheckoutFromQuery();
+    </script>
+  </body>
+</html>
